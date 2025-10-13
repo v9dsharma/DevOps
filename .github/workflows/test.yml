@@ -1,1 +1,12 @@
+name: test CI
+on:
+  schedule:
+    # Runs at 00:00 UTC every day
+    - cron: '*/5 * * * *'
 
+jobs:
+  example_job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print date
+        run: date
