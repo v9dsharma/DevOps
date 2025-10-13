@@ -1,12 +1,13 @@
 name: test CI
 on:
   schedule:
-    # Runs at 00:00 UTC every day
+    # Runs every 5 minutes
     - cron: '*/5 * * * *'
 
 jobs:
   example_job:
     runs-on: ubuntu-latest
     steps:
-      - name: Print date
-        run: date
+      - uses: actions/checkout@v4
+      - name: Echo test CI
+        run: echo "test CI"
